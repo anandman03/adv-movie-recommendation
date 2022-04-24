@@ -1,2 +1,2 @@
 cinemagoer
-ascii_magic
+argparse
