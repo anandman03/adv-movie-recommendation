@@ -4,13 +4,6 @@ from item_struct import ItemStructure
 from recommendation_engine import RecommendationEngine
 
 
-'''
-SearchBy
-- genre tags
-- cast (could be multiple)
-- combine results
-'''
-
 def parse_args():
 	'''Parse cmd args
 	:returns: parser schema as dictionary
@@ -44,6 +37,7 @@ def fill_dataset():
 		cache = [line.rstrip('\n') for line in file]
 
 	for index in range(len(cache)):
+		print(cache[index])
 		movie_details = get_movie_details(cache[index])
 		cache[index] = ItemStructure(movie_details)
 
@@ -68,7 +62,7 @@ def main():
 	for item in result:
 		title = item.get_item().get_title()
 		rating = item.get_item().get_rating()
-		print(f'Title: {title} (Rating: {rating})')
+		print(f'{title} (Rating: {rating})')
 
 	return
 
