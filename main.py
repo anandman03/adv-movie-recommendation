@@ -58,7 +58,6 @@ def main():
 	weights = [int(weight) for weight in weights]
 	result = engine.search(weights)
 
-	result = sorted(result, reverse=True)
 	for item in result:
 		title = item.get_item().get_title()
 		rating = item.get_item().get_rating()
